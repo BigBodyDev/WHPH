@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		774D1EC4363430917D6F15D6 /* Pods_WHPH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F83F053F5D7F033C649E82 /* Pods_WHPH.framework */; };
+		CE7CE58B24328E2C009979F7 /* AlarmHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE58A24328E2C009979F7 /* AlarmHost.swift */; };
+		CE7CE58D24329453009979F7 /* MainHostAddAlarmButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE58C24329453009979F7 /* MainHostAddAlarmButton.swift */; };
+		CE7CE58F243294DD009979F7 /* AlarmHostSaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE58E243294DD009979F7 /* AlarmHostSaveButton.swift */; };
+		CE7CE5912432A0E9009979F7 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5902432A0E9009979F7 /* AlarmManager.swift */; };
+		CE7CE5932432A5ED009979F7 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5922432A5ED009979F7 /* Time.swift */; };
 		CE971419243026AA00F2CD3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE971418243026AA00F2CD3B /* AppDelegate.swift */; };
 		CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97141A243026AA00F2CD3B /* SceneDelegate.swift */; };
 		CE97141E243026AA00F2CD3B /* WHPH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE97141C243026AA00F2CD3B /* WHPH.xcdatamodeld */; };
@@ -19,12 +24,16 @@
 		CE9714382430463E00F2CD3B /* AlarmRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9714372430463E00F2CD3B /* AlarmRow.swift */; };
 		CE97143A2430464F00F2CD3B /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9714392430464F00F2CD3B /* BackgroundView.swift */; };
 		CE97143C24306A9E00F2CD3B /* AlarmRowText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */; };
-		CE97143E2431BB2900F2CD3B /* AddAlarmHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97143D2431BB2900F2CD3B /* AddAlarmHost.swift */; };
-		CE9714662432011D00F2CD3B /* AlarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9714652432011D00F2CD3B /* AlarmList.swift */; };
+		CE97143E2431BB2900F2CD3B /* ModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97143D2431BB2900F2CD3B /* ModelExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4160D1CD9306267BBEF93357 /* Pods-WHPH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHPH.release.xcconfig"; path = "Target Support Files/Pods-WHPH/Pods-WHPH.release.xcconfig"; sourceTree = "<group>"; };
+		CE7CE58A24328E2C009979F7 /* AlarmHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHost.swift; sourceTree = "<group>"; };
+		CE7CE58C24329453009979F7 /* MainHostAddAlarmButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHostAddAlarmButton.swift; sourceTree = "<group>"; };
+		CE7CE58E243294DD009979F7 /* AlarmHostSaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmHostSaveButton.swift; sourceTree = "<group>"; };
+		CE7CE5902432A0E9009979F7 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
+		CE7CE5922432A5ED009979F7 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		CE971415243026AA00F2CD3B /* WHPH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHPH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE971418243026AA00F2CD3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE97141A243026AA00F2CD3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,8 +47,7 @@
 		CE9714372430463E00F2CD3B /* AlarmRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRow.swift; sourceTree = "<group>"; };
 		CE9714392430464F00F2CD3B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRowText.swift; sourceTree = "<group>"; };
-		CE97143D2431BB2900F2CD3B /* AddAlarmHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmHost.swift; sourceTree = "<group>"; };
-		CE9714652432011D00F2CD3B /* AlarmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmList.swift; sourceTree = "<group>"; };
+		CE97143D2431BB2900F2CD3B /* ModelExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExample.swift; sourceTree = "<group>"; };
 		E4F83F053F5D7F033C649E82 /* Pods_WHPH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHPH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59E2E1EB27F1341412A1310 /* Pods-WHPH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHPH.debug.xcconfig"; path = "Target Support Files/Pods-WHPH/Pods-WHPH.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +109,7 @@
 				CE971421243026AB00F2CD3B /* Assets.xcassets */,
 				CE971429243026AB00F2CD3B /* Info.plist */,
 				CE97141C243026AA00F2CD3B /* WHPH.xcdatamodeld */,
+				CE97143D2431BB2900F2CD3B /* ModelExample.swift */,
 				CE971423243026AB00F2CD3B /* Preview Content */,
 			);
 			path = WHPH;
@@ -128,7 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9714352430270100F2CD3B /* MainHost.swift */,
-				CE97143D2431BB2900F2CD3B /* AddAlarmHost.swift */,
+				CE7CE58A24328E2C009979F7 /* AlarmHost.swift */,
 			);
 			path = Host;
 			sourceTree = "<group>";
@@ -136,8 +145,9 @@
 		CE971431243026DC00F2CD3B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE7CE58C24329453009979F7 /* MainHostAddAlarmButton.swift */,
+				CE7CE58E243294DD009979F7 /* AlarmHostSaveButton.swift */,
 				CE9714372430463E00F2CD3B /* AlarmRow.swift */,
-				CE9714652432011D00F2CD3B /* AlarmList.swift */,
 				CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */,
 				CE9714392430464F00F2CD3B /* BackgroundView.swift */,
 			);
@@ -148,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				CE971433243026F700F2CD3B /* Alarm.swift */,
+				CE7CE5902432A0E9009979F7 /* AlarmManager.swift */,
+				CE7CE5922432A5ED009979F7 /* Time.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,15 +280,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9714382430463E00F2CD3B /* AlarmRow.swift in Sources */,
-				CE97143E2431BB2900F2CD3B /* AddAlarmHost.swift in Sources */,
+				CE7CE58B24328E2C009979F7 /* AlarmHost.swift in Sources */,
+				CE7CE5932432A5ED009979F7 /* Time.swift in Sources */,
+				CE97143E2431BB2900F2CD3B /* ModelExample.swift in Sources */,
+				CE7CE5912432A0E9009979F7 /* AlarmManager.swift in Sources */,
 				CE97141E243026AA00F2CD3B /* WHPH.xcdatamodeld in Sources */,
 				CE971419243026AA00F2CD3B /* AppDelegate.swift in Sources */,
 				CE97143A2430464F00F2CD3B /* BackgroundView.swift in Sources */,
 				CE9714362430270100F2CD3B /* MainHost.swift in Sources */,
-				CE9714662432011D00F2CD3B /* AlarmList.swift in Sources */,
 				CE971434243026F700F2CD3B /* Alarm.swift in Sources */,
 				CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */,
 				CE97143C24306A9E00F2CD3B /* AlarmRowText.swift in Sources */,
+				CE7CE58F243294DD009979F7 /* AlarmHostSaveButton.swift in Sources */,
+				CE7CE58D24329453009979F7 /* MainHostAddAlarmButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,20 +33,7 @@ struct AlarmRow: View {
 
 struct AlarmRow_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmRow(alarm: .constant(TEST_ALARM))
+        AlarmRow(alarm: .constant(Alarm.TEST()))
             .previewLayout(.fixed(width: 400, height: 100))
-    }
-}
-
-extension Date{
-    var WHPHString: (time: String, hrPeriod: String) {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.dateStyle = .none
-        
-//        let dateStrings = formatter.string(from: self).split(separator: " ")
-//
-//        return (time: String(dateStrings[0]), hrPeriod: String(dateStrings[0]))
-        return (time: "7:00", hrPeriod: "AM")
     }
 }

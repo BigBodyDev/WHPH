@@ -15,10 +15,10 @@ struct AlarmRowText: View {
         VStack(alignment: .leading, spacing: 5) {
             HStack(alignment: .bottom, spacing: 5) {
                 
-                Text(alarm.time.WHPHString.time)
+                Text(alarm.time.stringNoHrPeriod)
                     .font(.largeTitle)
                 
-                Text(alarm.time.WHPHString.hrPeriod)
+                Text(alarm.time.hrPeriod)
                     .font(.headline)
                     .padding(.bottom, 5)
             }
@@ -29,7 +29,7 @@ struct AlarmRowText: View {
 
 struct AlarmRowText_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmRowText(alarm: TEST_ALARM)
+        AlarmRowText(alarm: Alarm.TEST())
     }
 }
 

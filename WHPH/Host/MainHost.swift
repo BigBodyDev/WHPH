@@ -8,20 +8,9 @@
 
 import SwiftUI
 
-let TEST_ALARM = Alarm(01234121234, name: "Alarm", time: Date(), active: true, repeatInstances: ["Saturday", "Sunday"])
-
 struct MainHost: View {
-    @ObservedObject var manager: AlarmManager
-    
-    var addAlarmButton: some View {
-        Button(action: {
-//            self.showingProfile.toggle()
-        }) {
-            Image(systemName: "plus")
-                .imageScale(.large)
-                .padding()
-        }
-    }
+    @EnvironmentObject var manager: AlarmManager
+    @State var showingAlarmHost: Bool = false
     
     var body: some View {
         NavigationView {
@@ -29,13 +18,18 @@ struct MainHost: View {
                 AlarmRow(alarm: self.$manager.alarms[index])
             }
             .navigationBarTitle(Text("Work Hard, Play Hard"))
-            .navigationBarItems(trailing: addAlarmButton)
+            .navigationBarItems(trailing: MainHostAddAlarmButton(showingAlarmHost: $showingAlarmHost))
+            .sheet(isPresented: $showingAlarmHost) {
+                AlarmHost(alarm: .constant(Alarm.BLANK()), isPresented: self.$showingAlarmHost)
+                    .environmentObject(AlarmManager.shared)
+            }
         }
     }
 }
 
 struct MainHost_Previews: PreviewProvider {
     static var previews: some View {
-        MainHost(manager: AlarmManager.shared)
+        MainHost()
+            .environmentObject(AlarmManager.shared)
     }
 }

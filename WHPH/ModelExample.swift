@@ -1,5 +1,5 @@
 //
-//  AddAlarmHost.swift
+//  ModelExample.swift
 //  WHPH
 //
 //  Created by Devin Green on 3/29/20.
@@ -57,7 +57,7 @@ struct ListView : View {
     
 }
 
-struct AddAlarmHost_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView(manager: MyModelManager.shared)
     }

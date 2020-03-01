@@ -20,6 +20,5 @@ struct BackgroundView: View {
 struct BackgroundView_Previews: PreviewProvider {
     static var previews: some View {
         BackgroundView()
-//            .previewLayout(.fixed(width: 500, height: 300))
     }
 }
