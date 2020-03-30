@@ -3,29 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		774D1EC4363430917D6F15D6 /* Pods_WHPH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4F83F053F5D7F033C649E82 /* Pods_WHPH.framework */; };
 		CE971419243026AA00F2CD3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE971418243026AA00F2CD3B /* AppDelegate.swift */; };
 		CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97141A243026AA00F2CD3B /* SceneDelegate.swift */; };
 		CE97141E243026AA00F2CD3B /* WHPH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE97141C243026AA00F2CD3B /* WHPH.xcdatamodeld */; };
-		CE971420243026AA00F2CD3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97141F243026AA00F2CD3B /* ContentView.swift */; };
 		CE971422243026AB00F2CD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE971421243026AB00F2CD3B /* Assets.xcassets */; };
 		CE971425243026AB00F2CD3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE971424243026AB00F2CD3B /* Preview Assets.xcassets */; };
 		CE971428243026AB00F2CD3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE971426243026AB00F2CD3B /* LaunchScreen.storyboard */; };
+		CE971434243026F700F2CD3B /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE971433243026F700F2CD3B /* Alarm.swift */; };
+		CE9714362430270100F2CD3B /* MainHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9714352430270100F2CD3B /* MainHost.swift */; };
+		CE9714382430463E00F2CD3B /* AlarmRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9714372430463E00F2CD3B /* AlarmRow.swift */; };
+		CE97143A2430464F00F2CD3B /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9714392430464F00F2CD3B /* BackgroundView.swift */; };
+		CE97143C24306A9E00F2CD3B /* AlarmRowText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */; };
+		CE97143E2431BB2900F2CD3B /* AddAlarmHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97143D2431BB2900F2CD3B /* AddAlarmHost.swift */; };
+		CE9714662432011D00F2CD3B /* AlarmList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9714652432011D00F2CD3B /* AlarmList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4160D1CD9306267BBEF93357 /* Pods-WHPH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHPH.release.xcconfig"; path = "Target Support Files/Pods-WHPH/Pods-WHPH.release.xcconfig"; sourceTree = "<group>"; };
 		CE971415243026AA00F2CD3B /* WHPH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHPH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE971418243026AA00F2CD3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE97141A243026AA00F2CD3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CE97141D243026AA00F2CD3B /* WHPH.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WHPH.xcdatamodel; sourceTree = "<group>"; };
-		CE97141F243026AA00F2CD3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE971421243026AB00F2CD3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE971424243026AB00F2CD3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE971427243026AB00F2CD3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE971429243026AB00F2CD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE971433243026F700F2CD3B /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		CE9714352430270100F2CD3B /* MainHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainHost.swift; sourceTree = "<group>"; };
+		CE9714372430463E00F2CD3B /* AlarmRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRow.swift; sourceTree = "<group>"; };
+		CE9714392430464F00F2CD3B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRowText.swift; sourceTree = "<group>"; };
+		CE97143D2431BB2900F2CD3B /* AddAlarmHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmHost.swift; sourceTree = "<group>"; };
+		CE9714652432011D00F2CD3B /* AlarmList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmList.swift; sourceTree = "<group>"; };
+		E4F83F053F5D7F033C649E82 /* Pods_WHPH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHPH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E59E2E1EB27F1341412A1310 /* Pods-WHPH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHPH.debug.xcconfig"; path = "Target Support Files/Pods-WHPH/Pods-WHPH.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				774D1EC4363430917D6F15D6 /* Pods_WHPH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B02C37072177BA9B6FF4CB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4F83F053F5D7F033C649E82 /* Pods_WHPH.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8A6F9635CFB83DABFD0375AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E59E2E1EB27F1341412A1310 /* Pods-WHPH.debug.xcconfig */,
+				4160D1CD9306267BBEF93357 /* Pods-WHPH.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE97140C243026AA00F2CD3B = {
 			isa = PBXGroup;
 			children = (
 				CE971417243026AA00F2CD3B /* WHPH */,
 				CE971416243026AA00F2CD3B /* Products */,
+				8A6F9635CFB83DABFD0375AD /* Pods */,
+				5B02C37072177BA9B6FF4CB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +94,11 @@
 		CE971417243026AA00F2CD3B /* WHPH */ = {
 			isa = PBXGroup;
 			children = (
-				CE971418243026AA00F2CD3B /* AppDelegate.swift */,
-				CE97141A243026AA00F2CD3B /* SceneDelegate.swift */,
-				CE97141F243026AA00F2CD3B /* ContentView.swift */,
+				CE971432243026E100F2CD3B /* Model */,
+				CE971431243026DC00F2CD3B /* View */,
+				CE971430243026D500F2CD3B /* Host */,
+				CE97142F243026CB00F2CD3B /* Support */,
 				CE971421243026AB00F2CD3B /* Assets.xcassets */,
-				CE971426243026AB00F2CD3B /* LaunchScreen.storyboard */,
 				CE971429243026AB00F2CD3B /* Info.plist */,
 				CE97141C243026AA00F2CD3B /* WHPH.xcdatamodeld */,
 				CE971423243026AB00F2CD3B /* Preview Content */,
@@ -78,6 +114,44 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		CE97142F243026CB00F2CD3B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CE971418243026AA00F2CD3B /* AppDelegate.swift */,
+				CE97141A243026AA00F2CD3B /* SceneDelegate.swift */,
+				CE971426243026AB00F2CD3B /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		CE971430243026D500F2CD3B /* Host */ = {
+			isa = PBXGroup;
+			children = (
+				CE9714352430270100F2CD3B /* MainHost.swift */,
+				CE97143D2431BB2900F2CD3B /* AddAlarmHost.swift */,
+			);
+			path = Host;
+			sourceTree = "<group>";
+		};
+		CE971431243026DC00F2CD3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE9714372430463E00F2CD3B /* AlarmRow.swift */,
+				CE9714652432011D00F2CD3B /* AlarmList.swift */,
+				CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */,
+				CE9714392430464F00F2CD3B /* BackgroundView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE971432243026E100F2CD3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE971433243026F700F2CD3B /* Alarm.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE97142C243026AB00F2CD3B /* Build configuration list for PBXNativeTarget "WHPH" */;
 			buildPhases = (
+				A738425964505B443F39B3FD /* [CP] Check Pods Manifest.lock */,
 				CE971411243026AA00F2CD3B /* Sources */,
 				CE971412243026AA00F2CD3B /* Frameworks */,
 				CE971413243026AA00F2CD3B /* Resources */,
+				B1DAFD4535D7F1F97DDB7299 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,15 +220,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A738425964505B443F39B3FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WHPH-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1DAFD4535D7F1F97DDB7299 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WHPH/Pods-WHPH-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WHPH/Pods-WHPH-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WHPH/Pods-WHPH-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE971411243026AA00F2CD3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE9714382430463E00F2CD3B /* AlarmRow.swift in Sources */,
+				CE97143E2431BB2900F2CD3B /* AddAlarmHost.swift in Sources */,
 				CE97141E243026AA00F2CD3B /* WHPH.xcdatamodeld in Sources */,
 				CE971419243026AA00F2CD3B /* AppDelegate.swift in Sources */,
-				CE971420243026AA00F2CD3B /* ContentView.swift in Sources */,
+				CE97143A2430464F00F2CD3B /* BackgroundView.swift in Sources */,
+				CE9714362430270100F2CD3B /* MainHost.swift in Sources */,
+				CE9714662432011D00F2CD3B /* AlarmList.swift in Sources */,
+				CE971434243026F700F2CD3B /* Alarm.swift in Sources */,
 				CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */,
+				CE97143C24306A9E00F2CD3B /* AlarmRowText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +410,7 @@
 		};
 		CE97142D243026AB00F2CD3B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E59E2E1EB27F1341412A1310 /* Pods-WHPH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +431,7 @@
 		};
 		CE97142E243026AB00F2CD3B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4160D1CD9306267BBEF93357 /* Pods-WHPH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

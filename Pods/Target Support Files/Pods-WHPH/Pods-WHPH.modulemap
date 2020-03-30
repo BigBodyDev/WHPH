@@ -1,0 +1,6 @@
+framework module Pods_WHPH {
+  umbrella header "Pods-WHPH-umbrella.h"
+
+  export *
+  module * { export * }
+}
