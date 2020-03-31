@@ -10,11 +10,21 @@ import Foundation
 import Alamofire
 import SwiftUI
 
-class Alarm: ObservableObject, Identifiable {
+fileprivate var URL_BASE: String = "https://api.airtable.com/v0/appJcIDCIJdhCznhF/Alarms"
+fileprivate var URL_AUTHENTICATION: String = "?api_key=keycK6AVjkarbE5ZK"
+
+class Alarm: ObservableObject, Identifiable, Equatable {
+    var swiftId = UUID()
     @Published var id: String?
     @Published var name: String
     @Published var time: Time
-    @Published var active: Bool
+    @Published var active: Bool{
+        didSet{
+            if id != nil {
+                save(nil)
+            }
+        }
+    }
     @Published var repeatInstances = [String]()
     
     init(id: String?, name: String, time: Time, active: Bool, repeatInstances: [String]){
@@ -25,17 +35,29 @@ class Alarm: ObservableObject, Identifiable {
         self.repeatInstances = repeatInstances
     }
     
-    func save(_ completionHandler: @escaping () -> Void) {
+    func save(_ completionHandler: (() -> ())?) {
         if let id = self.id{
-            print(id)
-            completionHandler()
-        }else{
-            AF.request("https://api.airtable.com/v0/appJcIDCIJdhCznhF/Alarms?api_key=keycK6AVjkarbE5ZK", method: .post, parameters: self.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
+            AF.request("\(URL_BASE)/\(id)\(URL_AUTHENTICATION)", method: .put, parameters: self.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
                 print(response.value!)
-                completionHandler()
+                completionHandler?()
+            }
+        }else{
+            AF.request(URL_BASE + URL_AUTHENTICATION, method: .post, parameters: self.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
+                print(response.value!)
+                completionHandler?()
             }
         }
-        
+    }
+    
+    func delete(_ completionHandler: (() -> ())?) {
+        if let id = self.id{
+            AF.request("\(URL_BASE)/\(id)\(URL_AUTHENTICATION)", method: .delete).responseJSON { response in
+                print(response.value!)
+                completionHandler?()
+            }
+        }else{
+            completionHandler?()
+        }
     }
     
     func toJSON() -> Dictionary<String, Any> {
@@ -43,7 +65,9 @@ class Alarm: ObservableObject, Identifiable {
         return ["fields": json]
     }
     
-    
+    static func ==(lhs: Alarm, rhs: Alarm) -> Bool {
+        return lhs.time == rhs.time
+    }
 }
 
 extension Alarm {

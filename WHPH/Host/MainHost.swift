@@ -11,17 +11,25 @@ import SwiftUI
 struct MainHost: View {
     @EnvironmentObject var manager: AlarmManager
     @State var showingAlarmHost: Bool = false
+    @State var sentAlarm: Alarm = Alarm.BLANK()
     
     var body: some View {
         NavigationView {
-            List(manager.alarms.indices, id: \.self) { index in
+            List($manager.alarms.wrappedValue.indices, id: \.self) { index in
                 AlarmRow(alarm: self.$manager.alarms[index])
+                    .onTapGesture(count: 2) {
+                        self.sentAlarm = self.manager.alarms[index]
+                        self.showingAlarmHost.toggle()
+                }
             }
             .navigationBarTitle(Text("Work Hard, Play Hard"))
-            .navigationBarItems(trailing: MainHostAddAlarmButton(showingAlarmHost: $showingAlarmHost))
+            .navigationBarItems(trailing: MainHostAddAlarmButton(showingAlarmHost: $showingAlarmHost, sentAlarm: $sentAlarm))
             .sheet(isPresented: $showingAlarmHost) {
-                AlarmHost(alarm: Alarm.BLANK(), isPresented: self.$showingAlarmHost)
+                AlarmHost(alarm: self.sentAlarm, isPresented: self.$showingAlarmHost)
                     .environmentObject(AlarmManager.shared)
+                    .onDisappear(){
+                        self.sentAlarm = Alarm.BLANK()
+                }
             }
             .padding(.top, 10)
         }

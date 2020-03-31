@@ -20,6 +20,7 @@ class AlarmManager: ObservableObject {
     }
     
     func reload(_ completionHandler: (() -> ())?){
+        var newAlarms = [Alarm]()
         AF.request("https://api.airtable.com/v0/appJcIDCIJdhCznhF/Alarms?api_key=keycK6AVjkarbE5ZK").responseJSON { response in
             self.alarms.removeAll()
             
@@ -51,13 +52,14 @@ class AlarmManager: ObservableObject {
                         }
                         
                         let alarm = Alarm(id: id, name: name, time: time, active: active, repeatInstances: repeatInstances)
-                        self.alarms.append(alarm)
+                        newAlarms.append(alarm)
                     }
                 }
             }
-            self.alarms = self.alarms.sorted(by: { (first, second) -> Bool in
+            newAlarms = newAlarms.sorted(by: { (first, second) -> Bool in
                 first.time < second.time
             })
+            self.alarms = newAlarms
             completionHandler?()
         }
     }

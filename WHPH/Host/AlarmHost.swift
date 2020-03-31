@@ -19,7 +19,6 @@ struct AlarmHost: View {
                     TextField("My Alarm", text: $alarm.name)
                     AlarmDatePicker(alarm: .constant(alarm))
                 }
-                
                 Section{
                     HStack{
                         Text("Active")
@@ -37,7 +36,7 @@ struct AlarmHost: View {
                     }
                 }
             }
-            .navigationBarTitle($alarm.id.wrappedValue == nil ? "Add New Alarm" : "Edit \(alarm.name)")
+            .navigationBarTitle($alarm.id.wrappedValue == nil ? "Add New Alarm" : "Edit \"\($alarm.name.wrappedValue != String() ? $alarm.name.wrappedValue : "Alarm")\"")
             .navigationBarItems(trailing: AlarmHostSaveButton(alarm: .constant(alarm), isPresented: $isPresented))
         }
     }
@@ -45,6 +44,6 @@ struct AlarmHost: View {
 
 struct AlarmHost_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmHost(alarm: Alarm.BLANK(), isPresented: .constant(true))
+        AlarmHost(alarm: Alarm.TEST(), isPresented: .constant(true))
     }
 }

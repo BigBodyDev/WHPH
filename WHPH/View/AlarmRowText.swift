@@ -9,27 +9,27 @@
 import SwiftUI
 
 struct AlarmRowText: View {
-    var alarm: Alarm
+    @Binding var alarm: Alarm
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             HStack(alignment: .bottom, spacing: 5) {
                 
-                Text(alarm.time.stringNoHrPeriod)
+                Text($alarm.time.wrappedValue.stringNoHrPeriod)
                     .font(.largeTitle)
                 
-                Text(alarm.time.hrPeriod)
+                Text($alarm.time.wrappedValue.hrPeriod)
                     .font(.headline)
                     .padding(.bottom, 5)
             }
-            Text(alarm.name)
+            Text($alarm.name.wrappedValue)
         }
     }
 }
 
 struct AlarmRowText_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmRowText(alarm: Alarm.TEST())
+        AlarmRowText(alarm: .constant(Alarm.TEST()))
     }
 }
 

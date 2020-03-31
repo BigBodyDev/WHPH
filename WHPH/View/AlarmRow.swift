@@ -16,7 +16,7 @@ struct AlarmRow: View {
             BackgroundView()
             
             HStack {
-                AlarmRowText(alarm: $alarm.wrappedValue)
+                AlarmRowText(alarm: $alarm)
                     .opacity($alarm.active.wrappedValue ? 1 : 0.25)
                 
                 Toggle(isOn: $alarm.active) {

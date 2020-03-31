@@ -10,9 +10,11 @@ import SwiftUI
 
 struct MainHostAddAlarmButton: View {
     @Binding var showingAlarmHost: Bool
+    @Binding var sentAlarm: Alarm
     
     var body: some View {
         Button(action: {
+            self.sentAlarm = Alarm.BLANK()
             self.showingAlarmHost.toggle()
         }) {
             Image(systemName: "plus")
@@ -24,6 +26,6 @@ struct MainHostAddAlarmButton: View {
 
 struct MainHostAddAlarmButton_Previews: PreviewProvider {
     static var previews: some View {
-        MainHostAddAlarmButton(showingAlarmHost: .constant(false))
+        MainHostAddAlarmButton(showingAlarmHost: .constant(false), sentAlarm: .constant(Alarm.BLANK()))
     }
 }
