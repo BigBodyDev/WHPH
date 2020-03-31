@@ -8,8 +8,6 @@
 
 import SwiftUI
 
-
-
 struct AlarmRow: View {
     @Binding var alarm: Alarm
     

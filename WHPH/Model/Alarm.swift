@@ -11,11 +11,11 @@ import Alamofire
 import SwiftUI
 
 class Alarm: ObservableObject, Identifiable {
-    var id: String?
-    var name: String
-    var time: Time
-    var active: Bool
-    var repeatInstances = [String]()
+    @Published var id: String?
+    @Published var name: String
+    @Published var time: Time
+    @Published var active: Bool
+    @Published var repeatInstances = [String]()
     
     init(id: String?, name: String, time: Time, active: Bool, repeatInstances: [String]){
         self.id = id

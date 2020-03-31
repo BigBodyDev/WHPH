@@ -30,7 +30,7 @@ class AlarmManager: ObservableObject {
                         id = _id
                     }
                     if let fields = value["fields"] as? Dictionary<String, Any>{
-                        var active: Bool = true
+                        var active: Bool = false
                         var name: String = "Alarm"
                         var repeatInstances = [String]()
                         var time: Time = Time()

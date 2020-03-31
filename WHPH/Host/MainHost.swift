@@ -20,14 +20,15 @@ struct MainHost: View {
             .navigationBarTitle(Text("Work Hard, Play Hard"))
             .navigationBarItems(trailing: MainHostAddAlarmButton(showingAlarmHost: $showingAlarmHost))
             .sheet(isPresented: $showingAlarmHost) {
-                AlarmHost(alarm: .constant(Alarm.BLANK()), isPresented: self.$showingAlarmHost)
+                AlarmHost(alarm: Alarm.BLANK(), isPresented: self.$showingAlarmHost)
                     .environmentObject(AlarmManager.shared)
             }
+            .padding(.top, 10)
         }
     }
 }
 
-struct MainHost_Previews: PreviewProvider {
+struct MainHost_Previews: PreviewProvider{
     static var previews: some View {
         MainHost()
             .environmentObject(AlarmManager.shared)

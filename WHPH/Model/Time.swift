@@ -9,16 +9,13 @@
 import Foundation
 
 class Time: Equatable {
-    private var _underlyingDate: Date
-    var underlyingDate: Date {
-        return _underlyingDate
-    }
+    var underlyingDate: Date
     var comparisonDate: Date {
         let timeFormatter = DateFormatter()
         timeFormatter.dateStyle = .none
         timeFormatter.timeStyle = .full
 
-        let timeString = timeFormatter.string(from: _underlyingDate)
+        let timeString = timeFormatter.string(from: underlyingDate)
         if let date = timeFormatter.date(from: timeString){
             return date
         }
@@ -49,7 +46,7 @@ class Time: Equatable {
     }
     
     init() {
-        _underlyingDate = Date()
+        underlyingDate = Date()
     }
     
     init(_ timeString: String){
@@ -58,11 +55,11 @@ class Time: Equatable {
         dateFormatter.timeZone = TimeZone.autoupdatingCurrent
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
-        _underlyingDate = dateFormatter.date(from: timeString) ?? Date()
+        underlyingDate = dateFormatter.date(from: timeString) ?? Date()
     }
     
     init(_ date: Date){
-        _underlyingDate = date
+        underlyingDate = date
     }
     
     static func ==(lhs: Time, rhs: Time) -> Bool {
