@@ -14,6 +14,7 @@
 		CE7CE5912432A0E9009979F7 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5902432A0E9009979F7 /* AlarmManager.swift */; };
 		CE7CE5932432A5ED009979F7 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5922432A5ED009979F7 /* Time.swift */; };
 		CE7CE59B2432CFCC009979F7 /* AlarmDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE59A2432CFCC009979F7 /* AlarmDatePicker.swift */; };
+		CE7CE59F2432F73D009979F7 /* DeleteFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE59E2432F73D009979F7 /* DeleteFormRow.swift */; };
 		CE971419243026AA00F2CD3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE971418243026AA00F2CD3B /* AppDelegate.swift */; };
 		CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97141A243026AA00F2CD3B /* SceneDelegate.swift */; };
 		CE97141E243026AA00F2CD3B /* WHPH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE97141C243026AA00F2CD3B /* WHPH.xcdatamodeld */; };
@@ -36,6 +37,7 @@
 		CE7CE5902432A0E9009979F7 /* AlarmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
 		CE7CE5922432A5ED009979F7 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		CE7CE59A2432CFCC009979F7 /* AlarmDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDatePicker.swift; sourceTree = "<group>"; };
+		CE7CE59E2432F73D009979F7 /* DeleteFormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFormRow.swift; sourceTree = "<group>"; };
 		CE971415243026AA00F2CD3B /* WHPH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHPH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE971418243026AA00F2CD3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE97141A243026AA00F2CD3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				CE7CE58C24329453009979F7 /* MainHostAddAlarmButton.swift */,
 				CE7CE58E243294DD009979F7 /* AlarmHostSaveButton.swift */,
+				CE7CE59E2432F73D009979F7 /* DeleteFormRow.swift */,
 				CE9714372430463E00F2CD3B /* AlarmRow.swift */,
 				CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */,
 				CE9714392430464F00F2CD3B /* BackgroundView.swift */,
@@ -295,6 +298,7 @@
 				CE971434243026F700F2CD3B /* Alarm.swift in Sources */,
 				CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */,
 				CE97143C24306A9E00F2CD3B /* AlarmRowText.swift in Sources */,
+				CE7CE59F2432F73D009979F7 /* DeleteFormRow.swift in Sources */,
 				CE7CE58F243294DD009979F7 /* AlarmHostSaveButton.swift in Sources */,
 				CE7CE58D24329453009979F7 /* MainHostAddAlarmButton.swift in Sources */,
 			);

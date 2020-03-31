@@ -9,16 +9,13 @@
 import SwiftUI
 
 struct AlarmHostSaveButton: View {
-    @EnvironmentObject var manager: AlarmManager
-    @Binding var alarm: Alarm
+    @EnvironmentObject var alarm: Alarm
     @Binding var isPresented: Bool
     
     var body: some View {
         Button(action: {
-            self.$alarm.wrappedValue.save {
-                self.manager.reload {
-                    self.isPresented = false
-                }
+            self.alarm.save {
+                self.isPresented = false
             }
         }) {
             Spacer()
@@ -29,7 +26,7 @@ struct AlarmHostSaveButton: View {
 
 struct AlarmHostSaveButton_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmHostSaveButton(alarm: .constant(Alarm.BLANK()), isPresented: .constant(true))
-            .environmentObject(AlarmManager.shared)
+        AlarmHostSaveButton(isPresented: .constant(true))
+            .environmentObject(Alarm.TEST())
     }
 }

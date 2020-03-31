@@ -11,7 +11,6 @@ import Alamofire
 import SwiftUI
 
 class AlarmManager: ObservableObject {
-    static var shared = AlarmManager()
     
     @Published var alarms = [Alarm]()
     

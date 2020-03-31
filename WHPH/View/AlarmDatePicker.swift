@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AlarmDatePicker: View {
-    @Binding var alarm: Alarm
+    @EnvironmentObject var alarm: Alarm
     
     var body: some View {
         DatePicker("Set time",
@@ -21,6 +21,7 @@ struct AlarmDatePicker: View {
 
 struct AlarmDatePicker_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmDatePicker(alarm: .constant(Alarm.BLANK()))
+        AlarmDatePicker()
+            .environmentObject(Alarm.TEST())
     }
 }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AlarmRowText: View {
-    @Binding var alarm: Alarm
+    @EnvironmentObject var alarm: Alarm
     
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
@@ -29,7 +29,8 @@ struct AlarmRowText: View {
 
 struct AlarmRowText_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmRowText(alarm: .constant(Alarm.TEST()))
+        AlarmRowText()
+            .environmentObject(Alarm.TEST())
     }
 }
 

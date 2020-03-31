@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AlarmHost: View {
-    @ObservedObject var alarm: Alarm
+    @EnvironmentObject var alarm: Alarm
     @Binding var isPresented: Bool
     
     var body: some View {
@@ -17,7 +17,7 @@ struct AlarmHost: View {
             Form {
                 Section(header: Text("Alarm name")){
                     TextField("My Alarm", text: $alarm.name)
-                    AlarmDatePicker(alarm: .constant(alarm))
+                    AlarmDatePicker()
                 }
                 Section{
                     HStack{
@@ -35,15 +35,21 @@ struct AlarmHost: View {
                         }
                     }
                 }
+                Section {
+                    if alarm.id != nil {
+                        DeleteFormRow(isPresented: $isPresented)
+                    }
+                }
             }
             .navigationBarTitle($alarm.id.wrappedValue == nil ? "Add New Alarm" : "Edit \"\($alarm.name.wrappedValue != String() ? $alarm.name.wrappedValue : "Alarm")\"")
-            .navigationBarItems(trailing: AlarmHostSaveButton(alarm: .constant(alarm), isPresented: $isPresented))
+            .navigationBarItems(trailing: AlarmHostSaveButton(isPresented: $isPresented))
         }
     }
 }
 
 struct AlarmHost_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmHost(alarm: Alarm.TEST(), isPresented: .constant(true))
+        AlarmHost(isPresented: .constant(true))
+            .environmentObject(Alarm.TEST())
     }
 }
