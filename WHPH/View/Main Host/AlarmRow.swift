@@ -17,10 +17,11 @@ struct AlarmRow: View {
             
             HStack {
                 AlarmRowText(alarm: $alarm)
-                    .opacity(alarm.isOn ? 1 : 0.25)
+                    .opacity($alarm.isOn.wrappedValue ? 1 : 0.25)
                 Toggle(isOn: $alarm.isOn) {
                     Spacer()
                 }
+                .disabled($alarm.state.wrappedValue.rawValue != 0)
             }
             .padding(.horizontal)
             .padding(.vertical, 10)

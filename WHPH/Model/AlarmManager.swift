@@ -43,7 +43,7 @@ class AlarmManager: ObservableObject {
                         if let _isOn = value["isOn"] as? Bool {
                             isOn = _isOn
                         }
-                        if let _status = value["status"] as? Int {
+                        if let _status = value["state"] as? Int {
                             status = AlarmState(rawValue: _status)!
                         }
                         if let _name = value["name"] as? String {
