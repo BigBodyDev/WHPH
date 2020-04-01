@@ -9,17 +9,16 @@
 import SwiftUI
 
 struct AlarmRow: View {
-    @EnvironmentObject var alarm: Alarm
+    @Binding var alarm: Alarm
     
     var body: some View {
         ZStack {
             BackgroundView()
             
             HStack {
-                AlarmRowText()
-                    .opacity($alarm.active.wrappedValue ? 1 : 0.25)
-                
-                Toggle(isOn: $alarm.active) {
+                AlarmRowText(alarm: $alarm)
+                    .opacity(alarm.isOn ? 1 : 0.25)
+                Toggle(isOn: $alarm.isOn) {
                     Spacer()
                 }
             }
@@ -31,8 +30,7 @@ struct AlarmRow: View {
 
 struct AlarmRow_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmRow()
-            .environmentObject(Alarm.TEST())
+        AlarmRow(alarm: .constant(Alarm.TEST()))
             .previewLayout(.fixed(width: 400, height: 100))
     }
 }

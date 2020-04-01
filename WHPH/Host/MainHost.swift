@@ -9,37 +9,39 @@
 import SwiftUI
 
 struct MainHost: View {
-    @ObservedObject var manager: AlarmManager
+    @EnvironmentObject var manager: AlarmManager
     @State var showingAlarmHost: Bool = false
-    @State var sentAlarm: Alarm = Alarm.BLANK()
+    @State var alarm: Alarm = Alarm.BLANK()
     
     var body: some View {
         NavigationView {
-            List(manager.alarms, id: \.id) { alarm in
-                AlarmRow()
-                    .environmentObject(alarm)
-                    .onTapGesture(count: 2) {
-                        self.sentAlarm = alarm
-                        self.showingAlarmHost.toggle()
+            ZStack {
+                List (manager.alarms, id: \.id) { alarm in
+                    AlarmRow(alarm: .constant(alarm))
+                            .onTapGesture(count: 2) {
+                                self.alarm = alarm
+                                self.showingAlarmHost.toggle()
+                            }
                 }
-            }
-            .navigationBarTitle(Text("Work Hard, Play Hard"))
-            .navigationBarItems(trailing: MainHostAddAlarmButton(showingAlarmHost: $showingAlarmHost, sentAlarm: $sentAlarm))
-            .sheet(isPresented: $showingAlarmHost) {
-                AlarmHost(isPresented: self.$showingAlarmHost)
-                    .environmentObject(self.sentAlarm)
-                    .onDisappear(){
-                        self.sentAlarm = Alarm.BLANK()
-                        self.manager.reload(nil)
+                .navigationBarTitle(Text("Work Hard, Play Hard"))
+                .navigationBarItems(trailing: MainHostAddAlarmButton(showingAlarmHost: $showingAlarmHost, alarm: $alarm))
+                    
+                .sheet(isPresented: $showingAlarmHost) {
+                    AlarmHost(isPresented: self.$showingAlarmHost)
+                        .environmentObject(self.alarm)
+                        .onDisappear(){
+                            self.alarm = Alarm.BLANK()
+                    }
                 }
+                    
             }
-            .padding(.top, 10)
         }
     }
 }
 
 struct MainHost_Previews: PreviewProvider{
     static var previews: some View {
-        MainHost(manager: AlarmManager())
+        MainHost()
+            .environmentObject(AlarmManager())
     }
 }

@@ -15,6 +15,10 @@
 		CE7CE5932432A5ED009979F7 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5922432A5ED009979F7 /* Time.swift */; };
 		CE7CE59B2432CFCC009979F7 /* AlarmDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE59A2432CFCC009979F7 /* AlarmDatePicker.swift */; };
 		CE7CE59F2432F73D009979F7 /* DeleteFormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE59E2432F73D009979F7 /* DeleteFormRow.swift */; };
+		CE7CE5A124330A95009979F7 /* RepeatSelectHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5A024330A95009979F7 /* RepeatSelectHost.swift */; };
+		CE7CE5A324330B0D009979F7 /* RepeatOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5A224330B0D009979F7 /* RepeatOptionButton.swift */; };
+		CE7CE5A72433F69E009979F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE7CE5A62433F69E009979F7 /* GoogleService-Info.plist */; };
+		CE7CE5A924342DEE009979F7 /* AlarmState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5A824342DEE009979F7 /* AlarmState.swift */; };
 		CE971419243026AA00F2CD3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE971418243026AA00F2CD3B /* AppDelegate.swift */; };
 		CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97141A243026AA00F2CD3B /* SceneDelegate.swift */; };
 		CE97141E243026AA00F2CD3B /* WHPH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE97141C243026AA00F2CD3B /* WHPH.xcdatamodeld */; };
@@ -38,6 +42,10 @@
 		CE7CE5922432A5ED009979F7 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		CE7CE59A2432CFCC009979F7 /* AlarmDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDatePicker.swift; sourceTree = "<group>"; };
 		CE7CE59E2432F73D009979F7 /* DeleteFormRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteFormRow.swift; sourceTree = "<group>"; };
+		CE7CE5A024330A95009979F7 /* RepeatSelectHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatSelectHost.swift; sourceTree = "<group>"; };
+		CE7CE5A224330B0D009979F7 /* RepeatOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatOptionButton.swift; sourceTree = "<group>"; };
+		CE7CE5A62433F69E009979F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE7CE5A824342DEE009979F7 /* AlarmState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmState.swift; sourceTree = "<group>"; };
 		CE971415243026AA00F2CD3B /* WHPH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHPH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE971418243026AA00F2CD3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE97141A243026AA00F2CD3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 				CE97142F243026CB00F2CD3B /* Support */,
 				CE971421243026AB00F2CD3B /* Assets.xcassets */,
 				CE971429243026AB00F2CD3B /* Info.plist */,
+				CE7CE5A62433F69E009979F7 /* GoogleService-Info.plist */,
 				CE97141C243026AA00F2CD3B /* WHPH.xcdatamodeld */,
 				CE97143D2431BB2900F2CD3B /* ModelExample.swift */,
 				CE971423243026AB00F2CD3B /* Preview Content */,
@@ -142,6 +151,7 @@
 			children = (
 				CE9714352430270100F2CD3B /* MainHost.swift */,
 				CE7CE58A24328E2C009979F7 /* AlarmHost.swift */,
+				CE7CE5A024330A95009979F7 /* RepeatSelectHost.swift */,
 			);
 			path = Host;
 			sourceTree = "<group>";
@@ -152,10 +162,11 @@
 				CE7CE58C24329453009979F7 /* MainHostAddAlarmButton.swift */,
 				CE7CE58E243294DD009979F7 /* AlarmHostSaveButton.swift */,
 				CE7CE59E2432F73D009979F7 /* DeleteFormRow.swift */,
-				CE9714372430463E00F2CD3B /* AlarmRow.swift */,
 				CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */,
+				CE9714372430463E00F2CD3B /* AlarmRow.swift */,
 				CE9714392430464F00F2CD3B /* BackgroundView.swift */,
 				CE7CE59A2432CFCC009979F7 /* AlarmDatePicker.swift */,
+				CE7CE5A224330B0D009979F7 /* RepeatOptionButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 				CE971433243026F700F2CD3B /* Alarm.swift */,
 				CE7CE5902432A0E9009979F7 /* AlarmManager.swift */,
 				CE7CE5922432A5ED009979F7 /* Time.swift */,
+				CE7CE5A824342DEE009979F7 /* AlarmState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE971428243026AB00F2CD3B /* LaunchScreen.storyboard in Resources */,
+				CE7CE5A72433F69E009979F7 /* GoogleService-Info.plist in Resources */,
 				CE971425243026AB00F2CD3B /* Preview Assets.xcassets in Resources */,
 				CE971422243026AB00F2CD3B /* Assets.xcassets in Resources */,
 			);
@@ -286,7 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9714382430463E00F2CD3B /* AlarmRow.swift in Sources */,
+				CE7CE5A124330A95009979F7 /* RepeatSelectHost.swift in Sources */,
 				CE7CE58B24328E2C009979F7 /* AlarmHost.swift in Sources */,
+				CE7CE5A324330B0D009979F7 /* RepeatOptionButton.swift in Sources */,
 				CE7CE5932432A5ED009979F7 /* Time.swift in Sources */,
 				CE97143E2431BB2900F2CD3B /* ModelExample.swift in Sources */,
 				CE7CE5912432A0E9009979F7 /* AlarmManager.swift in Sources */,
@@ -295,6 +310,7 @@
 				CE97143A2430464F00F2CD3B /* BackgroundView.swift in Sources */,
 				CE9714362430270100F2CD3B /* MainHost.swift in Sources */,
 				CE7CE59B2432CFCC009979F7 /* AlarmDatePicker.swift in Sources */,
+				CE7CE5A924342DEE009979F7 /* AlarmState.swift in Sources */,
 				CE971434243026F700F2CD3B /* Alarm.swift in Sources */,
 				CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */,
 				CE97143C24306A9E00F2CD3B /* AlarmRowText.swift in Sources */,
@@ -449,7 +465,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devingreen.WHPH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -470,7 +486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devingreen.WHPH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

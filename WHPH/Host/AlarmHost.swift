@@ -12,6 +12,30 @@ struct AlarmHost: View {
     @EnvironmentObject var alarm: Alarm
     @Binding var isPresented: Bool
     
+    var repeatText: String{
+        if alarm.repeatInstances.isEmpty{
+            return "None"
+        }else if alarm.repeatInstances.count == 7{
+            return "Everyday"
+        }else if alarm.repeatInstances == ["Saturday", "Sunday"]{
+            return "Weekends"
+        }else if alarm.repeatInstances == ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]{
+            return "Weekdays"
+        }else if alarm.repeatInstances.count == 1{
+            return alarm.repeatInstances[0]
+        }else{
+            var finalStr = String()
+            for x in 0..<alarm.repeatInstances.count{
+                finalStr += alarm.repeatInstances[x].prefix(3)
+                
+                if x != alarm.repeatInstances.count - 1{
+                    finalStr += ", "
+                }
+            }
+            return finalStr
+        }
+    }
+    
     var body: some View {
         NavigationView{
             Form {
@@ -22,26 +46,26 @@ struct AlarmHost: View {
                 Section{
                     HStack{
                         Text("Active")
-                        Toggle(isOn: $alarm.active){
+                        Toggle(isOn: $alarm.isOn){
                             Spacer()
                         }
                     }
-                    NavigationLink(destination: BackgroundView()) {
+                    NavigationLink(destination: RepeatSelectHost()) {
                         HStack{
                             Text("Repeat")
                             Spacer()
-                            Text("None")
+                            Text(repeatText)
                                 .foregroundColor(.secondary)
                         }
                     }
                 }
                 Section {
-                    if alarm.id != nil {
+                    if !alarm.isNew{
                         DeleteFormRow(isPresented: $isPresented)
                     }
                 }
             }
-            .navigationBarTitle($alarm.id.wrappedValue == nil ? "Add New Alarm" : "Edit \"\($alarm.name.wrappedValue != String() ? $alarm.name.wrappedValue : "Alarm")\"")
+            .navigationBarTitle(alarm.isNew ? "Add New Alarm" : "Edit \"\($alarm.name.wrappedValue != String() ? $alarm.name.wrappedValue : "Alarm")\"")
             .navigationBarItems(trailing: AlarmHostSaveButton(isPresented: $isPresented))
         }
     }
@@ -50,6 +74,5 @@ struct AlarmHost: View {
 struct AlarmHost_Previews: PreviewProvider {
     static var previews: some View {
         AlarmHost(isPresented: .constant(true))
-            .environmentObject(Alarm.TEST())
     }
 }

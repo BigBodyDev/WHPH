@@ -7,59 +7,52 @@
 //
 
 import Foundation
-import Alamofire
 import SwiftUI
+import FirebaseDatabase
 
 class AlarmManager: ObservableObject {
-    
     @Published var alarms = [Alarm]()
     
     init() {
-        reload(nil)
-    }
-    
-    func reload(_ completionHandler: (() -> ())?){
-        var newAlarms = [Alarm]()
-        AF.request("https://api.airtable.com/v0/appJcIDCIJdhCznhF/Alarms?api_key=keycK6AVjkarbE5ZK").responseJSON { response in
+        Database.database().reference().child("Alarms").observe(.value) { snapshot in
             self.alarms.removeAll()
-            
-            if let dict = response.value as? Dictionary<String, Any>, let values = dict["records"] as? [Dictionary<String, Any>] {
-                for value in values {
-                    var id: String?
-                    if let _id = value["id"] as? String{
-                        id = _id
-                    }
-                    if let fields = value["fields"] as? Dictionary<String, Any>{
-                        var active: Bool = false
+            var newAlarms = [Alarm]()
+            if let values = snapshot.value as? Dictionary<String, Any> {
+                for id in values.keys {
+                    if let value = values[id] as? Dictionary<String, Any>{
+                        var isOn: Bool = true
+                        var status: AlarmState = .idle
                         var name: String = "Alarm"
                         var repeatInstances = [String]()
                         var time: Time = Time()
                         
-                        
-                        if let _active = fields["active"] as? Bool {
-                            active = _active
+                        if let _isOn = value["isOn"] as? Bool {
+                            isOn = _isOn
                         }
-                        if let _name = fields["name"] as? String {
+                        if let _status = value["status"] as? Int {
+                            status = AlarmState(rawValue: _status)!
+                        }
+                        if let _name = value["name"] as? String {
                             name = _name
                         }
-                        if let _repeatInstances = fields["repeat"] as? [String] {
+                        if let _repeatInstances = value["repeat"] as? [String] {
                             repeatInstances = _repeatInstances
-                            
                         }
-                        if let timeString = fields["time"] as? String{
+                        if let timeString = value["time"] as? String{
                             time = Time(timeString)
                         }
                         
-                        let alarm = Alarm(id: id, name: name, time: time, active: active, repeatInstances: repeatInstances)
+                        let alarm = Alarm(id: id, name: name, time: time, isOn: isOn, state: status, repeatInstances: repeatInstances)
                         newAlarms.append(alarm)
+                        alarm.isNew = false
                     }
+                    
                 }
             }
-            newAlarms = newAlarms.sorted(by: { (first, second) -> Bool in
+            newAlarms.sort(by: { (first, second) -> Bool in
                 first.time < second.time
             })
             self.alarms = newAlarms
-            completionHandler?()
         }
     }
 }

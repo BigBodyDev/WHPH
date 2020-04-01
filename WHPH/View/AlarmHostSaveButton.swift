@@ -27,6 +27,5 @@ struct AlarmHostSaveButton: View {
 struct AlarmHostSaveButton_Previews: PreviewProvider {
     static var previews: some View {
         AlarmHostSaveButton(isPresented: .constant(true))
-            .environmentObject(Alarm.TEST())
     }
 }

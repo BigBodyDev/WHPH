@@ -7,6 +7,7 @@ target 'WHPH' do
 
   # Pods for WHPH
 
-pod 'Alamofire'
+pod 'Firebase' 
+pod 'FirebaseDatabase' 
 
 end

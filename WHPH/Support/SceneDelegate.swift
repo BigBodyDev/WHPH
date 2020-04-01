@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         let manager = AlarmManager()
         
-        let contentView = MainHost(manager: manager).environmentObject(manager).environment(\.managedObjectContext, context)
+        let contentView = MainHost().environmentObject(manager).environment(\.managedObjectContext, context)
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

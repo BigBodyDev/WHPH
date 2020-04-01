@@ -7,62 +7,45 @@
 //
 
 import Foundation
-import Alamofire
 import SwiftUI
-
-fileprivate var URL_BASE: String = "https://api.airtable.com/v0/appJcIDCIJdhCznhF/Alarms"
-fileprivate var URL_AUTHENTICATION: String = "?api_key=keycK6AVjkarbE5ZK"
+import FirebaseDatabase
 
 class Alarm: ObservableObject, Identifiable, Equatable {
-    var swiftId = UUID()
-    @Published var id: String?
+    @Published var id: UUID
     @Published var name: String
     @Published var time: Time
-    @Published var active: Bool{
-        didSet{
-            if id != nil {
-                save(nil)
-            }
-        }
-    }
+    @Published var isOn: Bool
+    @Published var state: AlarmState
     @Published var repeatInstances = [String]()
+    @Published var isNew: Bool
     
-    init(id: String?, name: String, time: Time, active: Bool, repeatInstances: [String]){
-        self.id = id
+    init(id: String, name: String, time: Time, isOn: Bool, state: AlarmState, repeatInstances: [String]){
+        self.id = UUID(uuidString: id)!
         self.name = name
         self.time = time
-        self.active = active
+        self.isOn = isOn
+        self.state = state
         self.repeatInstances = repeatInstances
+        self.isNew = true
     }
     
     func save(_ completionHandler: (() -> ())?) {
-        if let id = self.id{
-            AF.request("\(URL_BASE)/\(id)\(URL_AUTHENTICATION)", method: .put, parameters: self.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
-                print(response.value!)
-                completionHandler?()
-            }
-        }else{
-            AF.request(URL_BASE + URL_AUTHENTICATION, method: .post, parameters: self.toJSON(), encoding: JSONEncoding.default).responseJSON { response in
-                print(response.value!)
-                completionHandler?()
-            }
+        Database.database().reference().child("Alarms").child(id.uuidString).setValue(self.toJSON()) { (error, reference) in
+            print(reference.description())
+            completionHandler?()
         }
     }
     
     func delete(_ completionHandler: (() -> ())?) {
-        if let id = self.id{
-            AF.request("\(URL_BASE)/\(id)\(URL_AUTHENTICATION)", method: .delete).responseJSON { response in
-                print(response.value!)
-                completionHandler?()
-            }
-        }else{
+        Database.database().reference().child("Alarms").child(id.uuidString).setValue(nil) { (error, reference) in
+            print(reference.description())
             completionHandler?()
         }
     }
     
     func toJSON() -> Dictionary<String, Any> {
-        let json: Dictionary<String, Any> = ["name": self.name, "time": time.dateString, "active": active, "repeat": self.repeatInstances]
-        return ["fields": json]
+        let json: Dictionary<String, Any> = ["name": self.name, "time": time.dateString, "state": state.rawValue, "isOn": isOn, "repeat": self.repeatInstances]
+        return json
     }
     
     static func ==(lhs: Alarm, rhs: Alarm) -> Bool {
@@ -72,7 +55,7 @@ class Alarm: ObservableObject, Identifiable, Equatable {
 
 extension Alarm {
     func printAlarm(){
-        print("id: \(self.id ?? "none"),\nname: \(String(describing: self.name)),\ntime: \(self.time),\nactive: \(self.active),")
+        print("id: \(self.id.uuidString),\nname: \(String(describing: self.name)),\ntime: \(self.time),\nstate: \(self.state),\nisOn: \(self.isOn),")
         if repeatInstances.isEmpty {
             print("repeat: no repeat")
         }else{
@@ -86,10 +69,12 @@ extension Alarm {
     }
     
     static func BLANK() -> Alarm {
-        return Alarm(id: nil, name: "Alarm", time: Time(), active: true, repeatInstances: [])
+        return Alarm(id: UUID().uuidString, name: "Alarm", time: Time(), isOn: true, state: .idle, repeatInstances: [])
     }
     static func TEST() -> Alarm {
-        return Alarm(id: "this is a id", name: "Wake Up", time: Time(), active: true, repeatInstances: ["Saturday", "Sunday"])
+        let alarm = Alarm(id: "this is a id", name: "Wake Up", time: Time(), isOn: true, state: .idle, repeatInstances: ["Saturday", "Sunday"])
+        alarm.isNew = false
+        return alarm
     }
 }
 

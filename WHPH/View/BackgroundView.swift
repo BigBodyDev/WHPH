@@ -9,11 +9,13 @@
 import SwiftUI
 
 struct BackgroundView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         Rectangle()
-            .foregroundColor(.white)
+            .foregroundColor(colorScheme == .dark ? Color.white.opacity(0.1) : .white)
             .cornerRadius(15)
-            .shadow(color: Color.black.opacity(0.1), radius: 10)
+            .shadow(color: colorScheme == .dark ? Color.clear : Color.black.opacity(0.1), radius: 10)
     }
 }
 

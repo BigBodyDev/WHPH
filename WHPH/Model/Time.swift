@@ -17,6 +17,13 @@ class Time: Equatable {
 
         let timeString = timeFormatter.string(from: underlyingDate)
         if let date = timeFormatter.date(from: timeString){
+            let today = Date()
+            let tz = TimeZone.current
+            if tz.isDaylightSavingTime(for: today) {
+                return date.addingTimeInterval(60)
+            }
+            
+            
             return date
         }
         return Date()

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>935361313634-88kkf2ek1mko8uph4gp4m1sa1cgbdmp5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.935361313634-88kkf2ek1mko8uph4gp4m1sa1cgbdmp5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBXwrAF4HEKHW1AdsKXHKB2tti5s-pOEgw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>935361313634</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.devingreen.WHPH</string>
+	<key>PROJECT_ID</key>
+	<string>work-play-hard</string>
+	<key>STORAGE_BUCKET</key>
+	<string>work-play-hard.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:935361313634:ios:6b036853bad09b5712ca3b</string>
+	<key>DATABASE_URL</key>
+	<string>https://work-play-hard.firebaseio.com</string>
+</dict>
+</plist>
