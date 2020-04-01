@@ -14,19 +14,23 @@ class Alarm: ObservableObject, Identifiable, Equatable {
     @Published var id: UUID
     @Published var name: String
     @Published var time: Time
-    @Published var isOn: Bool
+    @Published var isOn: Bool{
+        didSet{
+            save(nil)
+        }
+    }
     @Published var state: AlarmState
     @Published var repeatInstances = [String]()
     @Published var isNew: Bool
     
-    init(id: String, name: String, time: Time, isOn: Bool, state: AlarmState, repeatInstances: [String]){
+    init(id: String, name: String, time: Time, isOn: Bool, state: AlarmState, repeatInstances: [String], isNew: Bool){
         self.id = UUID(uuidString: id)!
         self.name = name
         self.time = time
         self.isOn = isOn
         self.state = state
         self.repeatInstances = repeatInstances
-        self.isNew = true
+        self.isNew = isNew
     }
     
     func save(_ completionHandler: (() -> ())?) {
@@ -69,11 +73,10 @@ extension Alarm {
     }
     
     static func BLANK() -> Alarm {
-        return Alarm(id: UUID().uuidString, name: "Alarm", time: Time(), isOn: true, state: .idle, repeatInstances: [])
+        return Alarm(id: UUID().uuidString, name: "Alarm", time: Time(), isOn: true, state: .idle, repeatInstances: [], isNew: true)
     }
     static func TEST() -> Alarm {
-        let alarm = Alarm(id: "this is a id", name: "Wake Up", time: Time(), isOn: true, state: .idle, repeatInstances: ["Saturday", "Sunday"])
-        alarm.isNew = false
+        let alarm = Alarm(id: "this is a id", name: "Wake Up", time: Time(), isOn: true, state: .idle, repeatInstances: ["Saturday", "Sunday"], isNew: false)
         return alarm
     }
 }

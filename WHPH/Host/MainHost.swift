@@ -18,10 +18,10 @@ struct MainHost: View {
             ZStack {
                 List (manager.alarms, id: \.id) { alarm in
                     AlarmRow(alarm: .constant(alarm))
-                            .onTapGesture(count: 2) {
-                                self.alarm = alarm
-                                self.showingAlarmHost.toggle()
-                            }
+                        .onTapGesture(count: 2) {
+                            self.alarm = alarm
+                            self.showingAlarmHost.toggle()
+                        }
                 }
                 .navigationBarTitle(Text("Work Hard, Play Hard"))
                 .navigationBarItems(trailing: MainHostAddAlarmButton(showingAlarmHost: $showingAlarmHost, alarm: $alarm))
@@ -31,9 +31,10 @@ struct MainHost: View {
                         .environmentObject(self.alarm)
                         .onDisappear(){
                             self.alarm = Alarm.BLANK()
-                    }
+                        }
                 }
-                    
+                
+                
             }
         }
     }
