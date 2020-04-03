@@ -13,21 +13,21 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.devingreen.WHPH</string>
+	<string>com.slightwork.WHPH</string>
 	<key>PROJECT_ID</key>
 	<string>work-play-hard</string>
 	<key>STORAGE_BUCKET</key>
 	<string>work-play-hard.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:935361313634:ios:6b036853bad09b5712ca3b</string>
 	<key>DATABASE_URL</key>

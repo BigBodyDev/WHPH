@@ -26,9 +26,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let manager = AlarmManager()
+        let alarmManager = AlarmManager()
+        let codeManager = QRCodeManager()
         
-        let contentView = MainHost().environmentObject(manager).environment(\.managedObjectContext, context)
+        let contentView = MainHost(codeManager: codeManager).environmentObject(alarmManager).environment(\.managedObjectContext, context)
         
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -72,4 +73,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-

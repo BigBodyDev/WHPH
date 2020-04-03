@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,14 @@
 		CE7CE5A324330B0D009979F7 /* RepeatOptionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5A224330B0D009979F7 /* RepeatOptionButton.swift */; };
 		CE7CE5A72433F69E009979F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE7CE5A62433F69E009979F7 /* GoogleService-Info.plist */; };
 		CE7CE5A924342DEE009979F7 /* AlarmState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE5A824342DEE009979F7 /* AlarmState.swift */; };
+		CE879ECC24356C0100A327A6 /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE879ECB24356C0100A327A6 /* QRCode.swift */; };
+		CE879ED52435C67B00A327A6 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = CE879ED42435C67B00A327A6 /* CodeScanner */; };
+		CE879ED72435CA8E00A327A6 /* DisarmHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE879ED62435CA8E00A327A6 /* DisarmHost.swift */; };
+		CE879EDA2435D90000A327A6 /* ScanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE879ED92435D90000A327A6 /* ScanButton.swift */; };
+		CE879EDC2435D90A00A327A6 /* DisarmText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE879EDB2435D90A00A327A6 /* DisarmText.swift */; };
+		CE879EDE2435D91200A327A6 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE879EDD2435D91200A327A6 /* BackButton.swift */; };
+		CE879EE02435E28100A327A6 /* QRCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE879EDF2435E28100A327A6 /* QRCodeManager.swift */; };
+		CE879EE22436492F00A327A6 /* CodeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE879EE12436492F00A327A6 /* CodeText.swift */; };
 		CE971419243026AA00F2CD3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE971418243026AA00F2CD3B /* AppDelegate.swift */; };
 		CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97141A243026AA00F2CD3B /* SceneDelegate.swift */; };
 		CE97141E243026AA00F2CD3B /* WHPH.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE97141C243026AA00F2CD3B /* WHPH.xcdatamodeld */; };
@@ -31,7 +39,6 @@
 		CE97143A2430464F00F2CD3B /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9714392430464F00F2CD3B /* BackgroundView.swift */; };
 		CE97143C24306A9E00F2CD3B /* AlarmRowText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */; };
 		CE97143E2431BB2900F2CD3B /* ModelExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97143D2431BB2900F2CD3B /* ModelExample.swift */; };
-		CECA22B1243511950041821A /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECA22B0243511950041821A /* AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +54,14 @@
 		CE7CE5A224330B0D009979F7 /* RepeatOptionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatOptionButton.swift; sourceTree = "<group>"; };
 		CE7CE5A62433F69E009979F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE7CE5A824342DEE009979F7 /* AlarmState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmState.swift; sourceTree = "<group>"; };
+		CE879EC824353B7400A327A6 /* WHPH.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WHPH.entitlements; sourceTree = "<group>"; };
+		CE879ECB24356C0100A327A6 /* QRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		CE879ED62435CA8E00A327A6 /* DisarmHost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisarmHost.swift; sourceTree = "<group>"; };
+		CE879ED92435D90000A327A6 /* ScanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanButton.swift; sourceTree = "<group>"; };
+		CE879EDB2435D90A00A327A6 /* DisarmText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisarmText.swift; sourceTree = "<group>"; };
+		CE879EDD2435D91200A327A6 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		CE879EDF2435E28100A327A6 /* QRCodeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeManager.swift; sourceTree = "<group>"; };
+		CE879EE12436492F00A327A6 /* CodeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeText.swift; sourceTree = "<group>"; };
 		CE971415243026AA00F2CD3B /* WHPH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHPH.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE971418243026AA00F2CD3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE97141A243026AA00F2CD3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +76,6 @@
 		CE9714392430464F00F2CD3B /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		CE97143B24306A9E00F2CD3B /* AlarmRowText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRowText.swift; sourceTree = "<group>"; };
 		CE97143D2431BB2900F2CD3B /* ModelExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelExample.swift; sourceTree = "<group>"; };
-		CECA22B0243511950041821A /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		E4F83F053F5D7F033C649E82 /* Pods_WHPH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WHPH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E59E2E1EB27F1341412A1310 /* Pods-WHPH.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WHPH.debug.xcconfig"; path = "Target Support Files/Pods-WHPH/Pods-WHPH.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE879ED52435C67B00A327A6 /* CodeScanner in Frameworks */,
 				774D1EC4363430917D6F15D6 /* Pods_WHPH.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +110,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE879ED82435D8EA00A327A6 /* DisarmHost */ = {
+			isa = PBXGroup;
+			children = (
+				CE879ED92435D90000A327A6 /* ScanButton.swift */,
+				CE879EDB2435D90A00A327A6 /* DisarmText.swift */,
+				CE879EE12436492F00A327A6 /* CodeText.swift */,
+				CE879EDD2435D91200A327A6 /* BackButton.swift */,
+			);
+			path = DisarmHost;
+			sourceTree = "<group>";
+		};
 		CE97140C243026AA00F2CD3B = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +142,7 @@
 		CE971417243026AA00F2CD3B /* WHPH */ = {
 			isa = PBXGroup;
 			children = (
+				CE879EC824353B7400A327A6 /* WHPH.entitlements */,
 				CE971432243026E100F2CD3B /* Model */,
 				CE971431243026DC00F2CD3B /* View */,
 				CE971430243026D500F2CD3B /* Host */,
@@ -154,6 +181,7 @@
 				CE9714352430270100F2CD3B /* MainHost.swift */,
 				CE7CE58A24328E2C009979F7 /* AlarmHost.swift */,
 				CE7CE5A024330A95009979F7 /* RepeatSelectHost.swift */,
+				CE879ED62435CA8E00A327A6 /* DisarmHost.swift */,
 			);
 			path = Host;
 			sourceTree = "<group>";
@@ -162,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				CE9714392430464F00F2CD3B /* BackgroundView.swift */,
-				CECA22B0243511950041821A /* AlertView.swift */,
+				CE879ED82435D8EA00A327A6 /* DisarmHost */,
 				CECA22AF243510E20041821A /* RepeatSelectHost */,
 				CECA22AE243510D90041821A /* AlarmHost */,
 				CECA22AD243510CF0041821A /* Main Host */,
@@ -177,6 +205,8 @@
 				CE7CE5902432A0E9009979F7 /* AlarmManager.swift */,
 				CE7CE5922432A5ED009979F7 /* Time.swift */,
 				CE7CE5A824342DEE009979F7 /* AlarmState.swift */,
+				CE879ECB24356C0100A327A6 /* QRCode.swift */,
+				CE879EDF2435E28100A327A6 /* QRCodeManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +257,9 @@
 			dependencies = (
 			);
 			name = WHPH;
+			packageProductDependencies = (
+				CE879ED42435C67B00A327A6 /* CodeScanner */,
+			);
 			productName = WHPH;
 			productReference = CE971415243026AA00F2CD3B /* WHPH.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +288,9 @@
 				Base,
 			);
 			mainGroup = CE97140C243026AA00F2CD3B;
+			packageReferences = (
+				CE879ED32435C67B00A327A6 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = CE971416243026AA00F2CD3B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -329,9 +365,12 @@
 				CE7CE5A124330A95009979F7 /* RepeatSelectHost.swift in Sources */,
 				CE7CE58B24328E2C009979F7 /* AlarmHost.swift in Sources */,
 				CE7CE5A324330B0D009979F7 /* RepeatOptionButton.swift in Sources */,
+				CE879EDE2435D91200A327A6 /* BackButton.swift in Sources */,
+				CE879ECC24356C0100A327A6 /* QRCode.swift in Sources */,
 				CE7CE5932432A5ED009979F7 /* Time.swift in Sources */,
-				CECA22B1243511950041821A /* AlertView.swift in Sources */,
 				CE97143E2431BB2900F2CD3B /* ModelExample.swift in Sources */,
+				CE879EDC2435D90A00A327A6 /* DisarmText.swift in Sources */,
+				CE879EDA2435D90000A327A6 /* ScanButton.swift in Sources */,
 				CE7CE5912432A0E9009979F7 /* AlarmManager.swift in Sources */,
 				CE97141E243026AA00F2CD3B /* WHPH.xcdatamodeld in Sources */,
 				CE971419243026AA00F2CD3B /* AppDelegate.swift in Sources */,
@@ -340,11 +379,14 @@
 				CE7CE59B2432CFCC009979F7 /* AlarmDatePicker.swift in Sources */,
 				CE7CE5A924342DEE009979F7 /* AlarmState.swift in Sources */,
 				CE971434243026F700F2CD3B /* Alarm.swift in Sources */,
+				CE879EE22436492F00A327A6 /* CodeText.swift in Sources */,
 				CE97141B243026AA00F2CD3B /* SceneDelegate.swift in Sources */,
 				CE97143C24306A9E00F2CD3B /* AlarmRowText.swift in Sources */,
 				CE7CE59F2432F73D009979F7 /* DeleteFormRow.swift in Sources */,
 				CE7CE58F243294DD009979F7 /* AlarmHostSaveButton.swift in Sources */,
+				CE879EE02435E28100A327A6 /* QRCodeManager.swift in Sources */,
 				CE7CE58D24329453009979F7 /* MainHostAddAlarmButton.swift in Sources */,
+				CE879ED72435CA8E00A327A6 /* DisarmHost.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,16 +523,18 @@
 			baseConfigurationReference = E59E2E1EB27F1341412A1310 /* Pods-WHPH.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WHPH/WHPH.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WHPH/Preview Content\"";
-				DEVELOPMENT_TEAM = M4ZHY9Q9WR;
+				DEVELOPMENT_TEAM = X2W4R5VT29;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WHPH/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devingreen.WHPH;
+				PRODUCT_BUNDLE_IDENTIFIER = com.slightwork.WHPH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -502,16 +546,18 @@
 			baseConfigurationReference = 4160D1CD9306267BBEF93357 /* Pods-WHPH.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WHPH/WHPH.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WHPH/Preview Content\"";
-				DEVELOPMENT_TEAM = M4ZHY9Q9WR;
+				DEVELOPMENT_TEAM = X2W4R5VT29;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WHPH/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.devingreen.WHPH;
+				PRODUCT_BUNDLE_IDENTIFIER = com.slightwork.WHPH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -540,6 +586,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE879ED32435C67B00A327A6 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE879ED42435C67B00A327A6 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE879ED32435C67B00A327A6 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		CE97141C243026AA00F2CD3B /* WHPH.xcdatamodeld */ = {

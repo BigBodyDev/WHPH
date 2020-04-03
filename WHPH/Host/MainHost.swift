@@ -7,20 +7,26 @@
 //
 
 import SwiftUI
+import CodeScanner
+import AVFoundation
 
 struct MainHost: View {
-    @EnvironmentObject var manager: AlarmManager
+    @Environment(\.colorScheme) var colorScheme
+    @EnvironmentObject var alarmManager: AlarmManager
+    @ObservedObject var codeManager: QRCodeManager
     @State var showingAlarmHost: Bool = false
     @State var alarm: Alarm = Alarm.BLANK()
     
     var body: some View {
         NavigationView {
             ZStack {
-                List (manager.alarms, id: \.id) { alarm in
+                List (alarmManager.alarms, id: \.id) { alarm in
                     AlarmRow(alarm: .constant(alarm))
                         .onTapGesture(count: 2) {
-                            self.alarm = alarm
-                            self.showingAlarmHost.toggle()
+                            if alarm.state == .idle{
+                                self.alarm = alarm
+                                self.showingAlarmHost.toggle()
+                            }
                         }
                 }
                 .navigationBarTitle(Text("Work Hard, Play Hard"))
@@ -35,6 +41,32 @@ struct MainHost: View {
                 }
                 
                 
+                if alarmManager.numberOfSensitiveAlarms > 0{
+                    VStack{
+                        Spacer()
+                        NavigationLink(destination: DisarmHost(codeManager: .constant(codeManager))){
+                            ZStack{
+                                Rectangle()
+                                    .foregroundColor(.purple)
+                                    .cornerRadius(15)
+                                    .shadow(color: colorScheme == .dark ? Color.clear : Color.black.opacity(0.1), radius: 10)
+                                    .frame(height: 165)
+                                
+                                VStack(alignment: .leading, spacing: 5){
+                                    Text(alarmManager.numberOfSensitiveAlarms == 1 ? "Click here to disarm your alarm" : "Click here to disarm your alarms")
+                                        .font(.title)
+                                        .fontWeight(.heavy)
+                                        .foregroundColor(.white)
+                                    
+                                    Text(alarmManager.numberOfSensitiveAlarms == 1 ? "You have 1 alarm that need to be disarmed" : "You have \(alarmManager.numberOfSensitiveAlarms) alarms that need to be disarmed")
+                                        .font(.headline)
+                                        .foregroundColor(Color.white.opacity(0.5))
+                                }
+                            }.padding()
+                        }
+                    }
+                }
+                
             }
         }
     }
@@ -42,7 +74,8 @@ struct MainHost: View {
 
 struct MainHost_Previews: PreviewProvider{
     static var previews: some View {
-        MainHost()
+        MainHost(codeManager: QRCodeManager())
             .environmentObject(AlarmManager())
+            .environmentObject(QRCodeManager())
     }
 }

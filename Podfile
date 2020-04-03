@@ -9,5 +9,6 @@ target 'WHPH' do
 
 pod 'Firebase' 
 pod 'FirebaseDatabase' 
+pod 'Firebase/DynamicLinks'
 
 end

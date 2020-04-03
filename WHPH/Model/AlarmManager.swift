@@ -17,6 +17,10 @@ class AlarmManager: ObservableObject {
     @Published var activeAlarms = [Alarm]()
     @Published var disarmedAlarms = [Alarm]()
     
+    var numberOfSensitiveAlarms: Int {
+        return standbyAlarms.count + activeAlarms.count
+    }
+    
     init() {
         Database.database().reference().child("Alarms").observe(.value) { snapshot in
             self.alarms.removeAll()
@@ -86,4 +90,23 @@ class AlarmManager: ObservableObject {
             self.disarmedAlarms = sortedAlarmArray(alarms: disarmedAlarms)
         }
     }
+    
+    func disarmAlarms(_ completionHandler: (() -> ())?){
+        var json = Dictionary<String, Any>()
+        for alarm in self.alarms{
+            if alarm.state.rawValue > 0{
+                alarm.state = .idle
+                if alarm.repeatInstances.isEmpty{
+                    alarm.isOn = false
+                }else{
+                    alarm.isOn = true
+                }
+            }
+            json[alarm.id.uuidString] = alarm.toJSON()
+        }
+        Database.database().reference().child("Alarms").setValue(json) { (error, reference) in
+            print(reference.description())
+        }
+    }
+    
 }
