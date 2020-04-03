@@ -71,9 +71,6 @@ struct DisarmHost: View {
                     
                     for code in self.codeManager.codes{
                         if code.id.uuidString == id{
-                            print("\n\n")
-                            print(code.name)
-                            print("\n\n")
                             self.scannedCode = code
                             code.scan(nil)
                         }
