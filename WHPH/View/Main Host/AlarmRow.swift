@@ -21,7 +21,7 @@ struct AlarmRow: View {
                 Toggle(isOn: $alarm.isOn) {
                     Spacer()
                 }
-                .disabled($alarm.state.wrappedValue != .idle)
+                .disabled($alarm.isActive.wrappedValue)
             }
             .padding(.horizontal)
             .padding(.vertical, 10)

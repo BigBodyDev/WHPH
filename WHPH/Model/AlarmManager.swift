@@ -12,34 +12,26 @@ import FirebaseDatabase
 
 class AlarmManager: ObservableObject {
     @Published var alarms = [Alarm]()
-    @Published var idleAlarms = [Alarm]()
-    @Published var standbyAlarms = [Alarm]()
-    @Published var activeAlarms = [Alarm]()
-    @Published var disarmedAlarms = [Alarm]()
     
     var numberOfSensitiveAlarms: Int {
-        return standbyAlarms.count + activeAlarms.count
+        var count = Int()
+        for alarm in alarms{
+            count += alarm.isActive ? 1 : 0
+        }
+        return count
     }
     
     init() {
         Database.database().reference().child("Alarms").observe(.value) { snapshot in
             self.alarms.removeAll()
-            self.idleAlarms.removeAll()
-            self.standbyAlarms.removeAll()
-            self.activeAlarms.removeAll()
-            self.disarmedAlarms.removeAll()
             
             var alarms = [Alarm]()
-            var idleAlarms = [Alarm]()
-            var standbyAlarms = [Alarm]()
-            var activeAlarms = [Alarm]()
-            var disarmedAlarms = [Alarm]()
             
             if let values = snapshot.value as? Dictionary<String, Any> {
                 for id in values.keys {
                     if let value = values[id] as? Dictionary<String, Any>{
                         var isOn: Bool = true
-                        var status: AlarmState = .idle
+                        var isActive: Bool = false
                         var name: String = "Alarm"
                         var repeatInstances = [String]()
                         var time: Time = Time()
@@ -47,8 +39,8 @@ class AlarmManager: ObservableObject {
                         if let _isOn = value["isOn"] as? Bool {
                             isOn = _isOn
                         }
-                        if let _status = value["state"] as? Int {
-                            status = AlarmState(rawValue: _status)!
+                        if let _isActive = value["active"] as? Bool {
+                            isActive = _isActive
                         }
                         if let _name = value["name"] as? String {
                             name = _name
@@ -60,19 +52,9 @@ class AlarmManager: ObservableObject {
                             time = Time(timeString)
                         }
                         
-                        let alarm = Alarm(id: id, name: name, time: time, isOn: isOn, state: status, repeatInstances: repeatInstances, isNew: false)
+                        let alarm = Alarm(id: id, name: name, time: time, isOn: isOn, isActive: isActive, repeatInstances: repeatInstances, isNew: false)
                         alarms.append(alarm)
                         
-                        switch alarm.state {
-                        case .idle:
-                            idleAlarms.append(alarm)
-                        case .standby:
-                            standbyAlarms.append(alarm)
-                        case .active:
-                            activeAlarms.append(alarm)
-                        case .disarmed:
-                            disarmedAlarms.append(alarm)
-                        }
                     }
                     
                 }
@@ -84,18 +66,14 @@ class AlarmManager: ObservableObject {
                 })
             }
             self.alarms = sortedAlarmArray(alarms: alarms)
-            self.idleAlarms = sortedAlarmArray(alarms: idleAlarms)
-            self.standbyAlarms = sortedAlarmArray(alarms: standbyAlarms)
-            self.activeAlarms = sortedAlarmArray(alarms: activeAlarms)
-            self.disarmedAlarms = sortedAlarmArray(alarms: disarmedAlarms)
         }
     }
     
     func disarmAlarms(_ completionHandler: (() -> ())?){
         var json = Dictionary<String, Any>()
         for alarm in self.alarms{
-            if alarm.state.rawValue > 0{
-                alarm.state = .idle
+            if alarm.isActive{
+                alarm.isActive = false
                 if alarm.repeatInstances.isEmpty{
                     alarm.isOn = false
                 }else{

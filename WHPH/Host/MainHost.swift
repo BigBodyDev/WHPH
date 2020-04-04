@@ -23,7 +23,7 @@ struct MainHost: View {
                 List (alarmManager.alarms, id: \.id) { alarm in
                     AlarmRow(alarm: .constant(alarm))
                         .onTapGesture(count: 2) {
-                            if alarm.state == .idle{
+                            if !alarm.isActive{
                                 self.alarm = alarm
                                 self.showingAlarmHost.toggle()
                             }
