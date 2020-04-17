@@ -66,7 +66,11 @@ class Time: Equatable {
     }
     
     init(_ date: Date){
-        underlyingDate = date
+        if let date = date{
+            underlyingDate = date
+        }else{
+            underlyingDate = Date()
+        }
     }
     
     static func ==(lhs: Time, rhs: Time) -> Bool {

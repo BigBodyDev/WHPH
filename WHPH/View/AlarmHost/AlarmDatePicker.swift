@@ -8,13 +8,15 @@
 
 import SwiftUI
 
+fileprivate let calendar = Calendar.current
+
 struct AlarmDatePicker: View {
     @EnvironmentObject var alarm: Alarm
     
     var body: some View {
         DatePicker("Set time",
                    selection: $alarm.time.underlyingDate,
-                   in: Date().addingTimeInterval(-60*60*24)...Date().addingTimeInterval(60*60*24),
+                   in: $alarm.time.wrappedValue.underlyingDate.addingTimeInterval(-60*60*24)...$alarm.time.wrappedValue.underlyingDate.addingTimeInterval(60*60*24),
                    displayedComponents: .hourAndMinute)
     }
 }
