@@ -65,7 +65,7 @@ class Time: Equatable {
         underlyingDate = dateFormatter.date(from: timeString) ?? Date()
     }
     
-    init(_ date: Date){
+    init(_ date: Date?){
         if let date = date{
             underlyingDate = date
         }else{
