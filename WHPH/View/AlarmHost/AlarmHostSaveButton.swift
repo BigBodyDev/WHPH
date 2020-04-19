@@ -13,14 +13,14 @@ struct AlarmHostSaveButton: View {
     @Binding var isPresented: Bool
     
     var body: some View {
-        Button(action: {
-            self.alarm.save {
-                self.isPresented = false
+            Button(action: {
+                self.alarm.save {
+                    self.isPresented = false
+                }
+            }) {
+                Spacer()
+                Text("Save")
             }
-        }) {
-            Spacer()
-            Text("Save")
-        }
     }
 }
 
